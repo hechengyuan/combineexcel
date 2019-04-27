@@ -7,7 +7,7 @@
 ```
 pip3 install xlrd xlwt xlutils
 ```
-安装完成即可开始运行。
+安装完成，把这个项目整个下载下来，并解压缩为一个文件夹`combineexcel`，即可开始运行。
 
 ### 功能模块
 
