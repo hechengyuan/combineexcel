@@ -41,8 +41,27 @@ def third_step():
             pass
     File(cancel_list).write_cancel()
 
+def forth_step():
+    data = Data()
+    local_data = data.get_local()
+    remote_data = data.get_remote()
+    notelist = []
+    for i in remote_data:
+        try:
+            name = i[0]
+            namelist = [i[0] for i in local_data]
+            local_index = namelist.index(name)
+            local_note = local_data[local_index][4]
+            remote_note = i[4]
+            notelist.append(local_note + remote_note)
+        except:
+            notelist.append(i[4])
+    print(len(notelist))
+    File(notelist).write_remote_note()
+
 
 if __name__ == '__main__':
     first_step()
     second_step()
     third_step()
+    forth_step()
